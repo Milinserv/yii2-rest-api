@@ -13,6 +13,9 @@ $config = [
     ],
     'components' => [
         'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
             'enableCookieValidation' => false,
             'enableCsrfValidation' => false,
         ],
@@ -46,7 +49,16 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => true,
             'rules' => [
+                ['class' =>
+                    'yii\rest\UrlRule',
+                    'controller' => 'author'
+                ],
+                ['class' =>
+                    'yii\rest\UrlRule',
+                    'controller' => 'book',
+                ],
             ],
         ],
     ],

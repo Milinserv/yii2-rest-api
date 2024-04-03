@@ -29,6 +29,18 @@ class Book extends ActiveRecord
         return 'book';
     }
 
+    public function fields()
+    {
+        return [
+            'title',
+            'author_id',
+            'page',
+            'language',
+            'genre',
+            'description'
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
